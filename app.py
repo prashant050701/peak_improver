@@ -1,50 +1,3 @@
-Hugging Face's logo
-Hugging Face
- 
-Models
-Datasets
-Spaces
-Posts
-Docs
-Pricing
-
-
-
- 
-Spaces:
-
-divyansh050
-/
-peak_improver
-
-
-like
-0
- 
-App
-
-Files
-Community
-Settings
-peak_improver
-/
-app.py
-
-divyansh050's picture
-divyansh050
-Update app.py
-bb5833f
-VERIFIED
-less than a minute ago
-raw
-
-Copy download link
-history
-blame
-edit
-delete
-
-13.3 kB
 import os
 import numpy as np
 import pandas as pd
@@ -341,7 +294,7 @@ if data is not None:
         peak_power_after = peak_power_before
         power_after = power
     else:
-        st.success(f"Found {len(removed_indices)} data point(s) whose removal improves the dominant peak.")
+        #st.success(f"Found {len(removed_indices)} data point(s) whose removal improves the dominant peak.")
 
         temp_mjd = data_remaining['MJD'].values
         temp_rv = data_remaining['RV'].values
