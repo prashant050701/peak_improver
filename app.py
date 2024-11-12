@@ -43,11 +43,7 @@ if not file_names:
     st.error(f"No CSV files found in the '{RV_DIR}' directory.")
     st.stop()
 
-selected_file = st.sidebar.selectbox(
-    "Choose a dataset:",
-    options=file_names,
-    format_func=lambda x: x
-)
+selected_file = st.sidebar.selectbox("Choose a dataset:", options=file_names, format_func=lambda x: x)
 
 selected_index = file_names.index(selected_file)
 selected_row_count = csv_files[selected_index][1]
@@ -64,13 +60,7 @@ if data is not None:
         st.error(f"One or more required columns are missing in {csv_filename}.")
         st.stop()
 
-    n = st.sidebar.number_input(
-        "Number of data points to remove (n)",
-        min_value=1,
-        max_value=10,
-        value=3,
-        step=1
-    )
+    n = st.sidebar.number_input("Number of data points to remove (n)", min_value=1, max_value=10, value=3, step=1)
 
     use_greedy = st.sidebar.checkbox("Use Greedy Algorithm", value=False)
 
@@ -80,21 +70,9 @@ if data is not None:
     period_slider_min = 0.5
     period_slider_max = time_span * 150
 
-    min_period = st.sidebar.number_input(
-        "Minimum Period for Improvement (days)",
-        min_value=period_slider_min,
-        max_value=period_slider_max,
-        value=period_slider_min,
-        step=0.1
-    )
+    min_period = st.sidebar.number_input("Minimum Period for Improvement (days)", min_value=period_slider_min, max_value=period_slider_max, value=period_slider_min, step=0.1)
 
-    max_period = st.sidebar.number_input(
-        "Maximum Period for Improvement (days)",
-        min_value=period_slider_min,
-        max_value=period_slider_max,
-        value=period_slider_max,
-        step=0.1
-    )
+    max_period = st.sidebar.number_input("Maximum Period for Improvement (days)", min_value=period_slider_min, max_value=period_slider_max, value=period_slider_max, step=0.1)
 
     period_range = (min_period, max_period)
     
