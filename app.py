@@ -60,7 +60,7 @@ if data is not None:
         st.error(f"One or more required columns are missing in {csv_filename}.")
         st.stop()
 
-    n = st.sidebar.number_input("Number of data points to remove (n)", min_value=1, max_value=10, value=3, step=1)
+    n = st.sidebar.number_input("Number of data points to remove (n)", min_value=1, max_value=10, value=3, step=1) #max value should be increased?
 
     use_greedy = st.sidebar.checkbox("Use Greedy Algorithm", value=False)
 
